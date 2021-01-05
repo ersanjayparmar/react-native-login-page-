@@ -1,0 +1,70 @@
+import React,{Component} from 'react';
+import {
+ 
+  View,
+  Text,
+  Button,
+  TextInput,
+  ImageBackground,
+  TouchableOpacity,
+ 
+ 
+} from 'react-native';
+
+
+export default class App extends Component
+{
+  state={username:'',password:''}
+
+  testuser=(na)=>
+  {
+    this.setState({username:na})
+  }
+  testpassword=(pa)=>
+  {
+    this.setState({password:pa})
+  }
+login=()=>
+{
+  if(this.state.username=="Sanjay" && this.state.password=="8959")
+  {
+    alert("Welcome:"+this.state.username);
+  }
+  else
+  {
+    alert("Invalid user:"+this.state.username);
+  }
+
+}
+render()
+{
+  return(
+<View>
+     
+     <ImageBackground source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlig7h758mfZGogAHzdSvvJK4Az2brTeuj4hdwlA04qUjkKBeEDBh0ysQ&s=10"}} style={{width:'100%', height:400}}>
+      
+<View style={{paddingTop:30}}>
+       <Text style={{textAlign:"center",}}>LOGIN HERE !!!</Text>
+       <TextInput style={{backgroundColor:'white',borderWidth:1,padding:8,margin:10}}
+      onChangeText={this.testuser}
+      placeholder="Enter username"
+      ></TextInput>
+      
+      <TextInput style={{backgroundColor:"white",borderWidth:1,padding:8,margin:10}}
+      onChangeText={this.testpassword}
+      placeholder="Enter password"
+      ></TextInput>
+      
+      <Button color="#BDB76B" title="Login"
+      onPress={this.login}>
+      </Button>
+
+      <TouchableOpacity style={{backgroundColor:'#BBD45B',padding:6,width:60,margin:120,itemAlign:"Right",borderRadius:20}}>Register</TouchableOpacity>
+
+</View>
+      </ImageBackground>
+
+</View>
+  );
+}
+}
